@@ -1,6 +1,18 @@
 var wms_layers = [];
 
-var lyr_Kapsi_0 = new ol.layer.Tile({
+
+        var lyr_GoogleSatellite_0 = new ol.layer.Tile({
+            'title': 'Google Satellite',
+            'type':'base',
+            'opacity': 1.000000,
+            
+            
+            source: new ol.source.XYZ({
+            attributions: ' ',
+                url: 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}'
+            })
+        });
+var lyr_Kapsi_1 = new ol.layer.Tile({
                             source: new ol.source.TileWMS(({
                               url: "http://tiles.kartat.kapsi.fi/taustakartta?",
     attributions: ' &middot; <a href="">National Land Survey, CC-BY-4.0 via kartat.kapsi.fi</a>',
@@ -14,18 +26,7 @@ var lyr_Kapsi_0 = new ol.layer.Tile({
                             
                             
                           });
-              wms_layers.push([lyr_Kapsi_0, 0]);
-
-        var lyr_GoogleSatellite_1 = new ol.layer.Tile({
-            'title': 'Google Satellite',
-            'opacity': 1.000000,
-            
-            
-            source: new ol.source.XYZ({
-            attributions: ' ',
-                url: 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}'
-            })
-        });
+              wms_layers.push([lyr_Kapsi_1, 0]);
 var lyr_Landcoverwithin100moftheriver_2 = new ol.layer.Image({
                             opacity: 1,
                             title: "Land cover within 100 m of the river",
@@ -73,7 +74,7 @@ jsonSource_Break_4.addFeatures(features_Break_4);cluster_Break_4 = new ol.source
 var lyr_Break_4 = new ol.layer.Vector({
                 declutter: false,
                 source:cluster_Break_4,
-maxResolution:14.00223307613098,
+maxResolution:19.603126306583373,
  
                 style: style_Break_4,
                 popuplayertitle: "Break",
@@ -127,7 +128,7 @@ jsonSource_Break_7.addFeatures(features_Break_7);cluster_Break_7 = new ol.source
 var lyr_Break_7 = new ol.layer.Vector({
                 declutter: false,
                 source:cluster_Break_7,
-maxResolution:14.00223307613098,
+maxResolution:19.603126306583373,
  
                 style: style_Break_7,
                 popuplayertitle: "Break",
@@ -181,7 +182,7 @@ jsonSource_Break_10.addFeatures(features_Break_10);cluster_Break_10 = new ol.sou
 var lyr_Break_10 = new ol.layer.Vector({
                 declutter: false,
                 source:cluster_Break_10,
-maxResolution:14.00223307613098,
+maxResolution:19.603126306583373,
  
                 style: style_Break_10,
                 popuplayertitle: "Break",
@@ -212,9 +213,7 @@ var jsonSource_Conservationareas_12 = new ol.source.Vector({
 jsonSource_Conservationareas_12.addFeatures(features_Conservationareas_12);
 var lyr_Conservationareas_12 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_Conservationareas_12,
-maxResolution:126.02009768517884,
- 
+                source:jsonSource_Conservationareas_12, 
                 style: style_Conservationareas_12,
                 popuplayertitle: "Conservation areas",
                 interactive: true,
@@ -233,11 +232,11 @@ var group_Halikonjoki = new ol.layer.Group({
                                 fold: "open",
                                 title: "Halikonjoki"});
 var group_Basemap = new ol.layer.Group({
-                                layers: [lyr_Kapsi_0,lyr_GoogleSatellite_1,],
+                                layers: [lyr_GoogleSatellite_0,lyr_Kapsi_1,],
                                 fold: "open",
                                 title: "Base map"});
 
-lyr_Kapsi_0.setVisible(true);lyr_GoogleSatellite_1.setVisible(true);lyr_Landcoverwithin100moftheriver_2.setVisible(true);lyr_Potentialgreencorridor_3.setVisible(true);lyr_Break_4.setVisible(true);lyr_Landcoverwithin100moftheriver_5.setVisible(true);lyr_Potentialgreencorridor_6.setVisible(true);lyr_Break_7.setVisible(true);lyr_Landcoverwithin100moftheriver_8.setVisible(true);lyr_Potentialgreencorridor_9.setVisible(true);lyr_Break_10.setVisible(true);lyr_Rivers_11.setVisible(true);lyr_Conservationareas_12.setVisible(true);
+lyr_GoogleSatellite_0.setVisible(true);lyr_Kapsi_1.setVisible(true);lyr_Landcoverwithin100moftheriver_2.setVisible(true);lyr_Potentialgreencorridor_3.setVisible(true);lyr_Break_4.setVisible(true);lyr_Landcoverwithin100moftheriver_5.setVisible(true);lyr_Potentialgreencorridor_6.setVisible(true);lyr_Break_7.setVisible(true);lyr_Landcoverwithin100moftheriver_8.setVisible(true);lyr_Potentialgreencorridor_9.setVisible(true);lyr_Break_10.setVisible(true);lyr_Rivers_11.setVisible(true);lyr_Conservationareas_12.setVisible(true);
 var layersList = [group_Basemap,group_Halikonjoki,group_Hirvijoki,group_Savijoki,lyr_Rivers_11,lyr_Conservationareas_12];
 lyr_Potentialgreencorridor_3.set('fieldAliases', {'fid_int': 'fid_int', 'fid': 'fid', 'DN': 'DN', 'Shape_Area': 'Break area (m2)', 'Land use': 'Break area (m2)', });
 lyr_Break_4.set('fieldAliases', {'fid': 'fid', 'DN': 'DN', 'Shape_Area': 'Break area (m2)', 'Land use': 'Break area (m2)', });

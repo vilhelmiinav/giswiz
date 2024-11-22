@@ -4,12 +4,12 @@ var map = new ol.Map({
     renderer: 'canvas',
     layers: layersList,
     view: new ol.View({
-        extent: [2409642.515404, 8453486.488877, 2609663.974844, 8599536.209901], maxZoom: 28, minZoom: 5
+        extent: [2398211.934042, 8448783.485075, 2633660.071191, 8593080.079667], maxZoom: 28, minZoom: 5
     })
 });
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([2409642.515404, 8453486.488877, 2609663.974844, 8599536.209901], map.getSize());
+map.getView().fit([2398211.934042, 8448783.485075, 2633660.071191, 8593080.079667], map.getSize());
 
 ////small screen definition
     var hasTouchScreen = map.getViewport().classList.contains('ol-touch');
@@ -454,7 +454,7 @@ var Abstract = new ol.control.Control({
 
         var linkElement = document.createElement('a');
 
-        if (980 > 240) {
+        if (1139 > 240) {
             linkElement.setAttribute("onmouseenter", "showAbstract()");
             linkElement.setAttribute("onmouseleave", "hideAbstract()");
             linkElement.innerHTML = 'i';
@@ -468,13 +468,13 @@ var Abstract = new ol.control.Control({
             window.showAbstract = function() {
                 linkElement.classList.remove("project-abstract");
                 linkElement.classList.add("project-abstract-uncollapsed");
-                linkElement.innerHTML = 'This map explores three rivers in Varsinais-Suomi, Finland and their potential to function as green corridors linking nearby conservation areas to each other. Only 5,6 % of the region\'s land area is under protection and many of the conservation areas are small and scattered. Unutilized riverbanks - those without artificial surfaces or agriculture - represent opportunities for enhancing biodiversity and helping animals and plants move between areas fairly uninterrupted.<br /><br />Minimum of 5 meters of unutilized riverbank is considered a potential green corridor. If artificial surfaces or agriculture overlap the 5 m riverbank, it is classified as a "break" in the corridor. Only conservation areas located within 100 meters of a river along with any adjacent areas are shown.<br /><br />Land cover classes<br />Orange: upaved/paved road <br />Black: building<br />Grey: other impervious land<br />Beige: field<br />Dark green: dense vegetation<br />Medium green: shallow vegetation<br />Light green: bare land/rock<br />Blue: water';
+                linkElement.innerHTML = 'This map explores three rivers in Varsinais-Suomi and their potential to function as green corridors linking nearby conservation areas to each other. Only 5,6 % of the region\'s land area is under protection and many of the conservation areas are small and scattered. Unutilized riverbanks - those without artificial surfaces or agriculture - represent opportunities for enhancing biodiversity and helping animals and plants move between areas fairly uninterrupted.<br /><br />Minimum of 5 meters of unutilized riverbank is considered a potential green corridor. If artificial surfaces or agriculture overlap the 5 m riverbank, it is classified as a "break" in the corridor. Only conservation areas located within 100 meters of a river along with any adjacent areas are shown. The land cover data 100 m on both sides of a river has a pixel size of 2x2 m. Natural or semi-natural land cover is shown in green, unnatural land use in other colors.<br /><br />Land cover classes<br />Orange: upaved/paved road <br />Black: building<br />Grey: other impervious land<br />Beige: field<br />Dark green: dense vegetation<br />Medium green: shallow vegetation<br />Light green: bare land/rock<br />Blue: water';
             }
 
             hideAbstract();
         } else {
             linkElement.classList.add("project-abstract-uncollapsed");
-            linkElement.innerHTML = 'This map explores three rivers in Varsinais-Suomi, Finland and their potential to function as green corridors linking nearby conservation areas to each other. Only 5,6 % of the region\'s land area is under protection and many of the conservation areas are small and scattered. Unutilized riverbanks - those without artificial surfaces or agriculture - represent opportunities for enhancing biodiversity and helping animals and plants move between areas fairly uninterrupted.<br /><br />Minimum of 5 meters of unutilized riverbank is considered a potential green corridor. If artificial surfaces or agriculture overlap the 5 m riverbank, it is classified as a "break" in the corridor. Only conservation areas located within 100 meters of a river along with any adjacent areas are shown.<br /><br />Land cover classes<br />Orange: upaved/paved road <br />Black: building<br />Grey: other impervious land<br />Beige: field<br />Dark green: dense vegetation<br />Medium green: shallow vegetation<br />Light green: bare land/rock<br />Blue: water';
+            linkElement.innerHTML = 'This map explores three rivers in Varsinais-Suomi and their potential to function as green corridors linking nearby conservation areas to each other. Only 5,6 % of the region\'s land area is under protection and many of the conservation areas are small and scattered. Unutilized riverbanks - those without artificial surfaces or agriculture - represent opportunities for enhancing biodiversity and helping animals and plants move between areas fairly uninterrupted.<br /><br />Minimum of 5 meters of unutilized riverbank is considered a potential green corridor. If artificial surfaces or agriculture overlap the 5 m riverbank, it is classified as a "break" in the corridor. Only conservation areas located within 100 meters of a river along with any adjacent areas are shown. The land cover data 100 m on both sides of a river has a pixel size of 2x2 m. Natural or semi-natural land cover is shown in green, unnatural land use in other colors.<br /><br />Land cover classes<br />Orange: upaved/paved road <br />Black: building<br />Grey: other impervious land<br />Beige: field<br />Dark green: dense vegetation<br />Medium green: shallow vegetation<br />Light green: bare land/rock<br />Blue: water';
         }
 
         titleElement.appendChild(linkElement);
